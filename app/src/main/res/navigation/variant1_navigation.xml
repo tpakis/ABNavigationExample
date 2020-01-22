@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/variant1_navigation"
+    app:startDestination="@id/step1FragmentV1">
+
+    <fragment
+        android:id="@+id/step1FragmentV1"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step1FragmentV1"
+        tools:layout="@layout/fragment_step1_variant1"
+        android:label="Step1FragmentV1" >
+        <action
+            android:id="@+id/action_ended_step1"
+            app:destination="@id/step2FragmentV1">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step2FragmentV1"
+        tools:layout="@layout/fragment_step2_variant1"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step2FragmentV1"
+        android:label="Step2FragmentV1" >
+        <action
+            android:id="@+id/action_ended_step2"
+            app:destination="@id/step3FragmentV1">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step3FragmentV1"
+        tools:layout="@layout/fragment_step3_variant1"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step3FragmentV1"
+        android:label="Step3FragmentV1" >
+        <action
+            android:id="@+id/action_ended_step3"
+            app:destination="@id/step4FragmentV1">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step4FragmentV1"
+        tools:layout="@layout/fragment_step4_variant1"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step4FragmentV1"
+        android:label="Step4FragmentV1" />
+</navigation>

@@ -1,4 +1,4 @@
-package com.example.abnavigationexample
+package com.example.abnavigationexample.utils
 
 /**
  * Credit to JoseAlcerreca: https://gist.github.com/JoseAlcerreca/5b661f1800e1e654f07cc54fe87441af

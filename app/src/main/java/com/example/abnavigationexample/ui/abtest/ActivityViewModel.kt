@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.abnavigationexample.NO_NEXT_STEP
-import com.example.abnavigationexample.OneTimeEvent
+import com.example.abnavigationexample.utils.OneTimeEvent
 
 class ActivityViewModel(private val variation: ABTestVariation) : ViewModel() {
 

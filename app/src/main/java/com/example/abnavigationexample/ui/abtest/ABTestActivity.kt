@@ -9,6 +9,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.abnavigationexample.*
+import com.example.abnavigationexample.utils.callPrivateFunc
 import kotlinx.android.synthetic.main.activity_abtest.*
 
 enum class ABTestVariation(val navGraphRes: Int, val totalNumberOfSteps: Int) {
@@ -47,7 +48,22 @@ class ABTestActivity : AppCompatActivity() {
     }
 
     private fun handleNavigationEvent(nextStep: Int?) {
-        when (nextStep) {
+        val stepsCount = findNavController(R.id.nav_host_fragment)
+            .callPrivateFunc("getDestinationCountOnBackStack") as? Int
+
+        stepsCount?.let {
+            when (it) {
+                1 -> findNavController(R.id.nav_host_fragment)
+                    .navigate(R.id.action_ended_step1, bundleOf(STEP_BUNDLE_KEY to nextStep))
+                2 -> findNavController(R.id.nav_host_fragment)
+                    .navigate(R.id.action_ended_step2, bundleOf(STEP_BUNDLE_KEY to nextStep))
+                3 -> findNavController(R.id.nav_host_fragment)
+                    .navigate(R.id.action_ended_step3, bundleOf(STEP_BUNDLE_KEY to nextStep))
+                else -> finish()
+            }
+        }
+
+      /*  when (nextStep) {
             2 -> findNavController(R.id.nav_host_fragment)
                 .navigate(R.id.action_ended_step1, bundleOf(STEP_BUNDLE_KEY to nextStep))
             3 -> findNavController(R.id.nav_host_fragment)
@@ -55,7 +71,7 @@ class ABTestActivity : AppCompatActivity() {
             4 -> findNavController(R.id.nav_host_fragment)
                 .navigate(R.id.action_ended_step3, bundleOf(STEP_BUNDLE_KEY to nextStep))
             NO_NEXT_STEP -> finish()
-        }
+        }*/
     }
 
     companion object {

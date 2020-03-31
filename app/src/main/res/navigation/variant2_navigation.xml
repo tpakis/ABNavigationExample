@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/variant2_navigation"
+    app:startDestination="@id/step3Fragment">
+
+    <fragment
+        android:id="@+id/step3Fragment"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step3FragmentV1"
+        tools:layout="@layout/fragment_step3_variant1"
+        android:label="Step3FragmentV1" >
+        <action
+            android:id="@+id/next"
+            app:destination="@id/step2Fragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step2Fragment"
+        android:name="com.example.abnavigationexample.ui.abtest.variation2.Step2FragmentV2"
+        tools:layout="@layout/fragment_step2_variant2"
+        android:label="Step2FragmentV2" >
+        <action
+            android:id="@+id/next"
+            app:destination="@id/step1Fragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step1Fragment"
+        android:name="com.example.abnavigationexample.ui.abtest.variation1.Step1FragmentV1"
+        tools:layout="@layout/fragment_step1_variant1"
+        android:label="Step1FragmentV1" >
+        <action
+            android:id="@+id/next"
+            app:destination="@id/step4Fragment">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/step4Fragment"
+        tools:layout="@layout/fragment_step4_variant2"
+        android:name="com.example.abnavigationexample.ui.abtest.variation2.Step4FragmentV2"
+        android:label="Step4FragmentV2" />
+</navigation>

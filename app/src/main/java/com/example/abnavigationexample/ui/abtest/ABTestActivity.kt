@@ -45,13 +45,11 @@ class ABTestActivity : AppCompatActivity() {
     }
 
     private fun setupNavigation(navGraphId: Int) {
-        if (navController.currentDestination == null) {
-            val graph = navController.navInflater.inflate(navGraphId)
-            navController.setGraph(
-                graph,
-                bundleOf(STEP_BUNDLE_KEY to FIRST_STEP)
-            )
-        }
+        val graph = navController.navInflater.inflate(navGraphId)
+        navController.setGraph(
+            graph,
+            bundleOf(STEP_BUNDLE_KEY to FIRST_STEP)
+        )
     }
 
     private fun handleNavigationEvent(nextStep: Int?) {

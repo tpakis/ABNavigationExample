@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import com.example.abnavigationexample.R
-import kotlinx.android.synthetic.main.fragment_step2_baseline.button
+import com.example.abnavigationexample.bindView
 
 class Step2Fragment : ABTestFragment() {
+
+    private val button: Button by bindView(R.id.button)
 
     override fun onCreateView(
         inflater: LayoutInflater,

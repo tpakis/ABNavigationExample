@@ -12,7 +12,6 @@ import com.example.abnavigationexample.FIRST_STEP
 import com.example.abnavigationexample.R
 import com.example.abnavigationexample.STEP_BUNDLE_KEY
 
-
 enum class ABTestVariation(val navGraphRes: Int) {
     BASELINE(R.navigation.baseline_navigation),
     VARIATION1(R.navigation.variant1_navigation),

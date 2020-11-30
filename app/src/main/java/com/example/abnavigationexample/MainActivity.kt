@@ -1,23 +1,27 @@
 package com.example.abnavigationexample
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.abnavigationexample.ui.abtest.ABTestActivity
 import com.example.abnavigationexample.ui.abtest.ABTestVariation
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    private val buttonBaseline: Button by bindView(R.id.button_go_to_baseline)
+    private val buttonVariant1: Button by bindView(R.id.button_go_to_variant1)
+    private val buttonVariant2: Button by bindView(R.id.button_go_to_variant2)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        button_go_to_baseline.setOnClickListener {
+        buttonBaseline.setOnClickListener {
             goToABTest(ABTestVariation.BASELINE)
         }
-        button_go_to_variant1.setOnClickListener {
+        buttonVariant1.setOnClickListener {
             goToABTest(ABTestVariation.VARIATION1)
         }
-        button_go_to_variant2.setOnClickListener {
+        buttonVariant2.setOnClickListener {
             goToABTest(ABTestVariation.VARIATION2)
         }
     }

@@ -12,6 +12,8 @@ import com.example.abnavigationexample.ui.abtest.fragments.ABTestFragment
 class Step1FragmentV1 : ABTestFragment() {
 
     private val button: Button by bindView(R.id.button)
+    private val button2: Button by bindView(R.id.button2)
+    private var buttonLeak: Button? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -23,6 +25,9 @@ class Step1FragmentV1 : ABTestFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    // both of these will leak View if not null onDestroyView
+        // buttonLeak = view.findViewById(R.id.button2)
+        // buttonLeak = button2
         button.text = resources.getString(R.string.end_step, stepNumber)
         button.setOnClickListener {
             activityViewModel.endedStepNavigateToNext(stepNumber)

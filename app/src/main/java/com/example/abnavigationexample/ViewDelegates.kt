@@ -48,8 +48,8 @@ class BindViewDelegate<T>(
 }
 
 fun <T : View> Fragment.bindView(@IdRes resource: Int): Lazy<T> = BindViewDelegate(
-    createView = { this.requireView().findViewById<T>(resource) },
-    getLifecycle = { this.viewLifecycleOwner.lifecycle }
+    createView = { requireView().findViewById<T>(resource) },
+    getLifecycle = { viewLifecycleOwner.lifecycle }
 )
 
 fun <T : View> Activity.bindView(@IdRes res: Int): Lazy<T> {

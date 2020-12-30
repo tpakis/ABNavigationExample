@@ -6,6 +6,7 @@ import android.view.View
 import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.*
+import androidx.recyclerview.widget.RecyclerView
 import java.lang.IllegalStateException
 
 class BindViewDelegate<T>(
@@ -60,4 +61,9 @@ fun <T : View> Activity.bindView(@IdRes res: Int): Lazy<T> {
 fun <T : View> View.bindView(@IdRes res: Int): Lazy<T> {
     @Suppress("UNCHECKED_CAST")
     return lazy(LazyThreadSafetyMode.NONE) { findViewById<T>(res) }
+}
+
+fun <T : View> RecyclerView.ViewHolder.bindView(@IdRes res: Int): Lazy<T> {
+    @Suppress("UNCHECKED_CAST")
+    return lazy(LazyThreadSafetyMode.NONE) { itemView.findViewById<T>(res) }
 }

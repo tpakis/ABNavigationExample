@@ -1,6 +1,7 @@
 package com.example.abnavigationexample
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.abnavigationexample.ui.abtest.ABTestActivity
